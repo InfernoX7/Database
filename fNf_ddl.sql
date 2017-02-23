@@ -14,7 +14,8 @@ CREATE TABLE trainer(
   lastName VARCHAR(40),
   age INT,
   trainerID INT,
-  PRIMARY KEY(memberID)
+  PRIMARY KEY(memberID),
+  FOREIGN KEY trainer_key (trainerID) references trainer(trainerID)
   );
   
 CREATE TABLE payment(
@@ -22,14 +23,16 @@ CREATE TABLE payment(
   memberID INT, 
   amount float,
   _month varchar(40),
-  PRIMARY KEY(paymentID)
+  PRIMARY KEY(paymentID),
+  FOREIGN KEY member_key(memberID) references member(memberID)
   );
 CREATE TABLE _class(
   classID INT AUTO_INCREMENT,
   className varchar(40), 
   _day VARCHAR(10),
   trainerID INT,
-  PRIMARY KEY(classID)
+  PRIMARY KEY(classID),
+  FOREIGN KEY trainer_class_key(trainerID)references trainer(trainerID)
   );
   
   CREATE TABLE enrolment(
@@ -37,5 +40,7 @@ CREATE TABLE _class(
   memberID INT, 
   classID INT,
   PRIMARY KEY(enrolmentID)
+  FOREIGN KEY member_enrolment_key(memberID) references member(memberID),
+  FOREIGN KEY class_key(classID) references _class(classID)
   );
   
