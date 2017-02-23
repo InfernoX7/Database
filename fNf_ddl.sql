@@ -39,7 +39,7 @@ CREATE TABLE _class(
   enrolmentID INT AUTO_INCREMENT,
   memberID INT, 
   classID INT,
-  PRIMARY KEY(enrolmentID)
+  PRIMARY KEY(enrolmentID),
   FOREIGN KEY member_enrolment_key(memberID) references member(memberID),
   FOREIGN KEY class_key(classID) references _class(classID)
   );
