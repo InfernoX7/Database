@@ -6,14 +6,14 @@
  echo "</html>";
 ?>
 <body>
-	<h2>View All Members Details</h2>
+	<h2>View All Member Details</h2>
 	<form action ="listMember.php" method="post">
-		<input type = "submit" value = 'View Members' name = "viewMembers"><br>
+		<input type = "submit" value = 'View Member Details' name = "viewMembers"><br>
 	</form>
 	
 	<h2>View All Members /w Trainer</h2>
 	<form action ="listMember.php" method="post">
-		<input type = "submit" value = 'View Members & Trainers' name = "viewMemTrain"><br>
+		<input type = "submit" value = 'View Members & Trainers' name = "viewMembers"><br>
 	</form>
 	
 	<h2>Add a Trainer</h2>
@@ -45,7 +45,7 @@
 	
 	<h2>View All Members /w Class & Trainer</h2>
 	<form action ="listMember.php" method="post">
-		<input type = "submit" value = 'View Member & Class' name = "viewMemClass"><br>
+		<input type = "submit" value = 'View Members & Class' name = "viewMembers"><br>
 	</form>
 	
 	<h2>View Payment Details</h2>
