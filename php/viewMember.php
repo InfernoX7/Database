@@ -1,11 +1,11 @@
 <?php
-	$title=$_POST["viewMembers"];
+	$title = $_POST["viewMember"];
     require_once('head.php');
 
     echo "<body>";
         echo"<h2>$title</h2>";
         $conn = mysqli_connect('localhost', 'root','password', 'fnf');    
-        if($_POST["viewMembers"] == "View Member Details"){
+        if($title == "View Member Details"){
 			$query = "SELECT * FROM member";
 			$result = mysqli_query($conn, $query);
 			echo "<table><tr>";
@@ -21,7 +21,7 @@
 				}
 				echo "</table>";
 		}
-		elseif($_POST["viewMembers"] == "View Members & Trainers"){
+		elseif($title == "View Members & Trainers"){
 			$query = "SELECT firstName, lastName, age, trainerName FROM member, trainer WHERE member.trainerID = trainer.trainerID;";
 			$result = mysqli_query($conn, $query);
 			echo "<table><tr>";
@@ -37,7 +37,7 @@
 				}
 				echo "</table>";
 		}
-		elseif($_POST["viewMembers"] == "View Members & Class"){
+		elseif($title == "View Members & Class"){
 			//Query goes below
 			$query = "";
 			$result = mysqli_query($conn, $query);
