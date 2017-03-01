@@ -15,8 +15,8 @@
 			else if (empty($_POST['classID']))
 				echo "<h2>You must enter a class ID</h2>";
 			else{
-				$memID=$_POST['memID'];
-				$classID=$_POST['classID'];
+				$memID = $_POST['memID'];
+				$classID = $_POST['classID'];
 				//Query required below
 				$query = "";
 				mysqli_query($conn, $query);

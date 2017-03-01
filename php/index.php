@@ -65,7 +65,7 @@
 	<form action = "viewInfo.php" method ="post">
 		First Name <input type="text" name = "fName"><br>
 		Last Name <input type="text" name = "lName"><br>
-		<Input type = "submit" value = "Veiw Payments"><br>
+		<Input type = "submit" value = "Veiw Payments" name = "viewInfo"><br>
 	</form>
 	</td>
 	</tr>
@@ -79,11 +79,12 @@
 		<Input type = "submit" value = "Enroll With Name" name = "enrollMember"><br>
 	</form>
 	</td>
+	
 	<td>
 	<h2>View Trainer /w Classes</h2>
 	<form action = "viewInfo.php" method ="post">
 		Name <input type="text" name = "trainerName"><br>
-		<Input type = "submit" value = "View Trainers"><br>
+		<Input type = "submit" value = "View Trainers & Class" name = "viewInfo"><br>
 	</form>
 	</td>
 	</tr>

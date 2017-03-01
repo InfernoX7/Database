@@ -51,9 +51,9 @@
 			else if (empty($_POST['newLName']))
 				echo "<h2>You must enter a new last name</h2>";
 			else{
-				$fName=$_POST['fName'];
-				$lName=$_POST['lName'];
-				$newLName=$_POST['newLName']; 
+				$fName = $_POST['fName'];
+				$lName = $_POST['lName'];
+				$newLName = $_POST['newLName']; 
 				//Query required below
 				$query = "";
 				mysqli_query($conn, $query);
