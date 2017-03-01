@@ -1,11 +1,11 @@
 <?php
 	$title = $_POST["viewInfo"];
     require_once('head.php');
-
     echo "<body>";
-        echo"<h2>$title</h2>";
+        echo"<h1>$title</h1>";
         $conn = mysqli_connect('localhost', 'root','password', 'fnf');    
-        if($title == "View Member Details"){
+        // View All Member Details
+		if($title == "View Member Details"){
 			$query = "SELECT * FROM member";
 			$result = mysqli_query($conn, $query);
 			echo "<table><tr>";
@@ -21,6 +21,7 @@
 				}
 				echo "</table>";
 		}
+		//View Members with trainers - No ID's
 		elseif($title == "View Members & Trainers"){
 			$query = "SELECT firstName, lastName, age, trainerName FROM member, trainer WHERE member.trainerID = trainer.trainerID;";
 			$result = mysqli_query($conn, $query);
@@ -37,6 +38,7 @@
 				}
 				echo "</table>";
 		}
+		//View Members with classes and trainers
 		elseif($title == "View Members & Class"){
 			//Query goes below
 			$query = "";
@@ -55,7 +57,7 @@
 				echo "</table>";
 		}
 		else{
-			echo "You have accessed this page without using a form please try again!";
+			echo "<h2>You have accessed this page without using a form please try again!</h2>";
 		}
         echo "<br><a href='index.php'>Continue</a>";
     echo "</body>";

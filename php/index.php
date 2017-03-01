@@ -24,16 +24,16 @@
 	<tr>
 	<td>
 	<h2>Add a Trainer</h2>
-	<form action = "editTrainer.php" method ="post">
-		Name <input type="text" name = "editTrainer"><br>
-		<Input type = "submit" value = "Add New Trainer"><br>
+	<form action = "editRecord.php" method ="post">
+		Name <input type="text" name = "trainerName"><br>
+		<Input type = "submit" value = "Add New Trainer" name = "editRecord"><br>
 	</form>
 	</td>
 	<td>
 	<h2>Delete a Trainer</h2>
-	<form action = "editTrainer.php" method ="post">
-		Name <input type="text" name = "editTrainer"><br>
-		<Input type = "submit" value = "Delete Trainer"><br>
+	<form action = "editRecord.php" method ="post">
+		Name <input type="text" name = "trainerName"><br>
+		<Input type = "submit" value = "Delete Trainer" name = "editRecord"><br>
 	</form>
 	</td>
 	</tr>
