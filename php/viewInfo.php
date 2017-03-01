@@ -1,5 +1,5 @@
 <?php
-	$title = $_POST["viewMember"];
+	$title = $_POST["viewInfo"];
     require_once('head.php');
 
     echo "<body>";
