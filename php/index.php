@@ -1,11 +1,8 @@
 <?php
-//echo "<html>";
 	$title = "FitNotFat Database";
 	require_once('head.php');
-	echo " <h1>$title</h1>";
- echo "</html>";
+	echo "<h1>$title</h1>";
 ?>
-<body>
 	<table>
 	<tr>
 	<td>
@@ -44,7 +41,7 @@
 		First Name <input type="text" name = "fName"><br>
 		Last Name <input type="text" name = "lName"><br>
 		New Last Name <input type="text" name = "newLName"><br>
-		<Input type = "submit" value = "Change Last Name"><br>
+		<Input type = "submit" value = "Change Last Name" name = "editRecord"><br>
 	</form>
 	</td>
 	<td>
@@ -52,7 +49,7 @@
 	<form action = "enrollMember.php" method ="post">
 		Member ID <input type="text" name = "memID"><br>
 		Class ID <input type="text" name = "classID"><br>
-		<Input type = "submit" value = "Enroll With ID"><br>
+		<Input type = "submit" value = "Enroll With ID" name = "enrollMember"><br>
 	</form>
 	</td>
 	</tr>
@@ -79,16 +76,17 @@
 		First Name <input type="text" name = "fName"><br>
 		Last Name <input type="text" name = "lName"><br>
 		Class Name <input type="text" name = "className"><br>
-		<Input type = "submit" value = "Enroll With Name"><br>
+		<Input type = "submit" value = "Enroll With Name" name = "enrollMember"><br>
 	</form>
 	</td>
 	<td>
-	<h2>Trainer /w Classes</h2>
+	<h2>View Trainer /w Classes</h2>
 	<form action = "viewInfo.php" method ="post">
 		Name <input type="text" name = "trainerName"><br>
 		<Input type = "submit" value = "View Trainers"><br>
 	</form>
 	</td>
 	</tr>
-	<table>
+	</table>
 </body>
+</html>

@@ -1,7 +1,11 @@
 <?php
-	$title = $_POST["viewInfo"];
-    require_once('head.php');
-    echo "<body>";
+		if(empty($_POST["viewInfo"])){
+			$title = "Error";
+		}
+		else{
+			$title = $_POST["viewInfo"];
+		}
+		require_once('head.php');
         echo"<h1>$title</h1>";
         $conn = mysqli_connect('localhost', 'root','password', 'fnf');    
         // View All Member Details
@@ -40,7 +44,7 @@
 		}
 		//View Members with classes and trainers
 		elseif($title == "View Members & Class"){
-			//Query goes below
+			//Query required below
 			$query = "";
 			$result = mysqli_query($conn, $query);
 			echo "<table><tr>";
