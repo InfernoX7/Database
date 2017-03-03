@@ -37,6 +37,12 @@ SELECT amount, _month, firstName, lastName FROM payment, member
 WHERE payment.memberID = member.memberID 
 ORDER BY lastName, firstName;
 
+// "SELECT firstName, lastName, amount, _month FROM member, payment 
+				WHERE firstName = "First Name"
+				AND lastName = "Last Name"
+				AND member.memberID = payment.memberID";
+
+
 
 11. Enrol a member in a class given the member’s names and the class name. (6 marks)
 12. Given a trainer’s name list all classes that s/he takes, together with the names of members
