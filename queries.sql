@@ -9,6 +9,8 @@ WHERE member.trainerID = trainer.trainerID;
 /*5. Insert a trainer. (3 marks)*/
 INSERT INTO trainer (trainerName, trainerID);
 
+// INSERT INTO trainer (trainerID, trainerName) VALUES (NULL, "trainerName");
+
 /*6. Delete a trainer. (3 marks)*/
 DELETE FROM trainer
 WHERE trainerName = trainerName;
