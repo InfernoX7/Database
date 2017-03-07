@@ -16,10 +16,9 @@ DELETE FROM trainer
 WHERE trainerName = trainerName;
 
 /*7. Update a member’s last name given their first and last names. (4 marks)*/
-UPDATE member SET lastName ="something"
-WHERE firstName = , lastName = ; 
-????????????????????
-
+UPDATE member SET lastName ="Last Name"
+WHERE firstName = "First Name"
+AND lastName = "Last Name";
 8. Enrol a member in a class given the member ID and the class ID. (4 marks)
 
 
