@@ -15,8 +15,7 @@
 			}
 			else{
 				$trainerName = $_POST["trainerName"];
-				//Query required below
-				$query = "";
+				$query = "INSERT INTO trainer (trainerID, trainerName) VALUES (NULL, '${trainerName}')";
 				mysqli_query($conn, $query);
 				echo "<h2>$trainerName was added to the database!</h2>";
 				mysqli_close($conn);
@@ -30,13 +29,13 @@
 			else{
 				$trainerName = $_POST["trainerName"];
 				//Query required below
-				$query = "";
+				$query = "DELETE FROM trainer WHERE trainerName = '${trainerName}'";
 				mysqli_query($conn, $query);
 				if(mysqli_affected_rows($conn)>0){
 					echo "<h2>$trainerName was deleted from the database!</h2>";
 				}
 				else
-					echo "<h2> No records changed </h2>";
+					echo "<h2> No records changed, check names in form!  </h2>";
 				
 				mysqli_close($conn);
 			}
@@ -55,13 +54,15 @@
 				$lName = $_POST['lName'];
 				$newLName = $_POST['newLName']; 
 				//Query required below
-				$query = "";
+				$query = "UPDATE member SET lastName ='${newLName}'
+							WHERE firstName = '${fName}'
+							AND lastName = '${lName}'";
 				mysqli_query($conn, $query);
 				if(mysqli_affected_rows($conn)>0){
-					echo "<h2>$fName $lName changed to $fname $newLName</h2>";
+					echo "<h2>$fName $lName changed to $fName $newLName</h2>";
 				}
 				else
-					echo "<h2> No records changed </h2>";
+					echo "<h2> No records changed, check names in form! </h2>";
 				mysqli_close($conn);
 			}
 		}
