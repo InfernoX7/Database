@@ -1,7 +1,7 @@
 /*3. Select all details of each member. (2 marks)*/
 SELECT * FROM member;
 
-/*List each memberâ€™s names and age together with the name of their trainer, no IDs to be
+/*List each member’s names and age together with the name of their trainer, no IDs to be
 displayed. (3 marks)*/
 SELECT firstName, lastName, age, trainerName FROM member, trainer
 WHERE member.trainerID = trainer.trainerID;
@@ -13,22 +13,23 @@ INSERT INTO trainer (trainerID, trainerName) VALUES (NULL, "trainerName");
 DELETE FROM trainer
 WHERE trainerName = trainerName;
 
-/*7. Update a memberâ€™s last name given their first and last names. (4 marks)*/
+/*7. Update a member’s last name given their first and last names. (4 marks)*/
 UPDATE member SET lastName ="Last Name"
 WHERE firstName = "First Name"
 AND lastName = "Last Name";
 
 
 /*/8. Enrol a member in a class given the member ID and the class ID. (4 marks)/*/
-INSERT INTO enrolment (enrolmentID, memberID, classID) VALUES (NULL, memberID, classID)
-WHERE;
+INSERT INTO enrolment (enrolmentID, memberID, classID) VALUES (NULL, "memberID", "classID")
 
-/*9. List each memberâ€™s names and the classes that each member is enrolled on together with
-the class trainerâ€™s name. (4 marks)*/ 
-SELECT firstName, lastName, className, trainerName FROM member, _class, trainer, enrolment
-WHERE enrolment.memberID = member.memberID
-AND enrolment.classID = _class.classID
-AND _class.trainerID = trainer.trainerID;
+
+/*9. List each member’s names and the classes that each member is enrolled on together with
+the class trainer’s name. (4 marks)*/ 
+SELECT firstName, lastName, className, trainerName FROM member, _class, trainer, enrolment 
+WHERE enrolment.memberID = member.memberID 
+AND enrolment.classID = _class.classID 
+AND _class.trainerID = trainer.trainerID; 
+
 
 /*10. Show payment details for a member given their name. Both first name and last name
 together with all payment details should be included, no IDs to be included, ordered by last
@@ -42,17 +43,21 @@ AND member.memberID = payment.memberID;
 
 
 
-/*/11. Enrol a member in a class given the memberâ€™s names and the class name. (6 marks)/*/
+/*/11. Enrol a member in a class given the member’s names and the class name. (6 marks)/*/
 
 /*/INSERT INTO enrolment (enrolmentID, memberID, classID) VALUES (NULL, 
 (SELECT memberID FROM member WHERE firstName ="First Name" AND lastName ="Last Name"),
 (SELECT classID FROM _class WHERE className ="Class Name"));/*/
 
 
-12. Given a trainerâ€™s name list all classes that s/he takes, together with the names of members
-in those classes ordered by last name and then by first name of the member. (6 marks)
+/*/12. Given a trainer’s name list all classes that s/he takes, together with the names of members
+in those classes ordered by last name and then by first name of the member. (6 marks)/*/
 
-SELECT firstName, lastName, className, 
+SELECT className, firstName, lastName FROM trainer, member, _class
+WHERE trainerName = "Trainer Name"
+AND trainer.trainerID = _class.trainerID
+ORDER BY lastName, firstName; 
+
 
 
 
