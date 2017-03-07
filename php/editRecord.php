@@ -28,7 +28,6 @@
 			}
 			else{
 				$trainerName = $_POST["trainerName"];
-				//Query required below
 				$query = "DELETE FROM trainer WHERE trainerName = '${trainerName}'";
 				mysqli_query($conn, $query);
 				if(mysqli_affected_rows($conn)>0){
@@ -53,7 +52,6 @@
 				$fName = $_POST['fName'];
 				$lName = $_POST['lName'];
 				$newLName = $_POST['newLName']; 
-				//Query required below
 				$query = "UPDATE member SET lastName ='${newLName}'
 							WHERE firstName = '${fName}'
 							AND lastName = '${lName}'";

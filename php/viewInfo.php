@@ -44,7 +44,6 @@
 		}
 		//View Members with classes and trainers
 		elseif($title == "View Members & Class"){
-			//Query required below
 			$query = "SELECT firstName, lastName, className, trainerName FROM member, _class, trainer, enrolment
 						WHERE enrolment.memberID = member.memberID
 						AND enrolment.classID = _class.classID
@@ -101,7 +100,10 @@
 				echo "<h2>You must enter a trainer name</h2>";
 			else{
 				$trainerName = $_POST['trainerName'];
-				$query = "";
+				$query = "SELECT className, firstName, lastName FROM trainer, member, _class
+							WHERE trainerName = '${trainerName}'
+							AND trainer.trainerID = _class.trainerID
+							ORDER BY lastName, firstName; ";
 				$result = mysqli_query($conn, $query);
 				if (mysqli_num_rows($result)==0)
 					echo "<h2>$trainerName does not exist in the database or check your spelling!</h2>";
